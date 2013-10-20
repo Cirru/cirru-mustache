@@ -17,7 +17,7 @@
         compact: "http://jiyinyiyong.github.io/compact-json"
       },
       alias: {
-        cirru: "cirru/parser",
+        cirru: "cirru/src/parser",
         compact: "compact/compact"
       }
     })
@@ -31,14 +31,29 @@
       box-sizing: border-box;
     }
     .write {
-      width: 40%;
-      min-height: 400px;
+      position: absolute;
+      width: 50%;
+      height: 100%;
       font-size: 15px;
       font-family: Monaco, Monospace;
+      background: hsl(240,50%,96%);
+      border: none;
+      outline: none;
+      padding: 8px;
+      resize: none;
+    }
+    .write:focus {
+      background-color: white;
+    }
+    .source {
+      right: 0;
+    }
+    .target {
+      left: 0;
     }
   </style>
 <body>
-  <textarea class="write source"></textarea>
-  <textarea class="write target"></textarea>
+  <textarea class="write source" placeholder="Source Code"></textarea>
+  <textarea class="write target" placeholder="Compiled HTML"></textarea>
 </body>
 </html>

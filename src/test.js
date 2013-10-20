@@ -7,7 +7,7 @@
   };
 
   define(function(require, exports) {
-    var cirru, compact, mustache, req, show;
+    var cirru, compact, handle, mustache, req, show;
     cirru = require("cirru");
     compact = require("compact");
     cirru.parse.compact = true;
@@ -29,9 +29,38 @@
       console.clear();
       return console.log(compact.render(tree));
     };
-    return q(".source").onkeyup = function() {
+    q(".source").onkeyup = function() {
       return show(this.value);
     };
+    handle = function(event) {
+      var indent, last_line, new_text, start, text_after, text_before;
+      console.log(event.keyCode);
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        start = this.selectionStart;
+        text_before = this.value.slice(0, start);
+        text_after = this.value.slice(start);
+        last_line = text_before.split("\n").reverse()[0];
+        indent = "";
+        while (last_line[0] === " ") {
+          indent += " ";
+          last_line = last_line.slice(1);
+        }
+        new_text = text_before + "\n" + indent + text_after;
+        this.value = new_text;
+        return this.selectionStart = this.selectionEnd = start + indent.length + 1;
+      } else if (event.keyCode === 9) {
+        event.preventDefault();
+        start = this.selectionStart;
+        text_before = this.value.slice(0, start);
+        text_after = this.value.slice(start);
+        new_text = text_before + "  " + text_after;
+        this.value = new_text;
+        return this.selectionStart = this.selectionEnd = start + 2;
+      }
+    };
+    q("textarea.source").onkeydown = handle;
+    return q("textarea.target").onkeydown = handle;
   });
 
 }).call(this);
