@@ -1,0 +1,24 @@
+{
+  "name": "cirru-to-mustache",
+  "version": "0.0.1",
+  "authors": [
+    "jiyinyiyong <jiyinyiyong@gmail.com>"
+  ],
+  "description": "convert Cirru to Mustache",
+  "main": "src/mustache.js",
+  "keywords": [
+    "cirru",
+    "mustache"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "seajs": "*"
+  }
+}

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>-> Mustache</title>
+</head>
+  <!-- <script type="text/javascript" src="./bower_components/seajs/sea-debug.js"> -->
+  <script type="text/javascript" src="http://seajs.org/dist/sea-debug.js">
+  </script>
+  <script type="text/javascript">
+    seajs.config({
+      map: [
+        // ["jiyinyiyong.github.io", "code"]
+      ],
+      paths: {
+        cirru: "http://jiyinyiyong.github.io/cirru-parser",
+        compact: "http://jiyinyiyong.github.io/compact-json"
+      },
+      alias: {
+        cirru: "cirru/parser",
+        compact: "compact/compact"
+      }
+    })
+    seajs.use("./src/test.js")
+  </script>
+  <style type="text/css">
+    body {
+      margin: 0px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .write {
+      width: 40%;
+      min-height: 400px;
+      font-size: 15px;
+      font-family: Monaco, Monospace;
+    }
+  </style>
+<body>
+  <textarea class="write source"></textarea>
+  <textarea class="write target"></textarea>
+</body>
+</html>
