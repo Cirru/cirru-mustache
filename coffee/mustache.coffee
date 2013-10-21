@@ -77,6 +77,7 @@ class Writer
           when "section"  then @renderSection  (indent + 1), line
           when "inverted" then @renderInverted (indent + 1), line
           when "content"  then @renderContent  (indent + 1), line
+          when "partial"  then @renderPartial  (indent + 1), line
 
   renderSection: (indent, section) ->
     head = section[0]
@@ -99,8 +100,8 @@ class Writer
     @line indent, words
 
   render: (exps) ->
-    ret = @renderBlock -1, exps
-    ret[0]
+    @renderBlock -1, exps
+    @buffer
 
 render = (tree) ->
   (new Writer).render tree

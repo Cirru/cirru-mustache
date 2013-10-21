@@ -12,5 +12,6 @@ html
       = such a scope
     ^not-scope
       = this is not in scope
+    >partial
     ! comment
     div#id-of-it $ = content

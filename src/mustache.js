@@ -124,6 +124,8 @@
               return _this.renderInverted(indent + 1, line);
             case "content":
               return _this.renderContent(indent + 1, line);
+            case "partial":
+              return _this.renderPartial(indent + 1, line);
           }
         }
       });
@@ -158,9 +160,8 @@
     };
 
     Writer.prototype.render = function(exps) {
-      var ret;
-      ret = this.renderBlock(-1, exps);
-      return ret[0];
+      this.renderBlock(-1, exps);
+      return this.buffer;
     };
 
     return Writer;
