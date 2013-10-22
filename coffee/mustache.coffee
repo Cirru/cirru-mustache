@@ -90,15 +90,17 @@ class Writer
 
   renderSection: (indent, section) ->
     head = section[0]
+    name = (short head).match(/^[\w\d-\?]+/)[0]
     @line indent, "{{##{short head}}}"
     @renderBlock indent, section[1..]
-    @line indent, "{{/#{short head}}}"
+    @line indent, "{{/#{name}}}"
 
   renderInverted: (indent, section) ->
     head = section[0]
+    head = (short head).match(/^[\w\d-\?]+/)[0]
     @line indent, "{{^#{short head}}}"
     @renderBlock indent, section[1..]
-    @line indent, "{{/#{short head}}}"
+    @line indent, "{{/#{name}}}"
 
   renderPartial: (indent, line) ->
     head = line[0]

@@ -14,11 +14,19 @@ html
     div (:class "btn btn-primary")
       :id name
       = content of this
-    #scope
-      = such a scope
-    ^not-scope
-      = this is not in scope
-    ! comment
+    div.demo
+      #scope
+        = such a scope
+      ^not-scope
+        = this is not in scope
+      >partial
+      ! comment
+
+    div.demo
+      "#name :name"
+        = s
+      "^name :name"
+        = s
     div#id-of-it $ = content
 ```
 
@@ -30,19 +38,29 @@ to Mustache:
     <title>
       demo
     </title>
-    <meta charset="utf-8">
-    </meta>
+    <meta charset="utf-8" />
   </head>
   <body>
     <div id="name" class="btn btn-primary">
       content of this
     </div>
-    {{#scope}}
-      such a scope
-    {{/scope}}
-    {{^not-scope}}
-      this is not in scope
-    {{/not-scope}}
+    <div class="demo">
+      {{#scope}}
+        such a scope
+      {{/scope}}
+      {{^ot-scope}}
+        this is not in scope
+      {{/}}
+      {{> partial}}
+    </div>
+    <div class="demo">
+      {{#name :name}}
+        s
+      {{/name}}
+      {{^ame}}
+        s
+      {{/}}
+    </div>
     <div id="id-of-it">
       content
     </div>
