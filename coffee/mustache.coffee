@@ -1,4 +1,10 @@
 
+single_tags = [
+  "area", "base", "br", "col", "command", "embed"
+  "hr", "img", "input", "keygen", "link", "meta"
+  "param", "source", "track", "wbr"
+]
+
 pattern = (name) ->
   if      name.match /^\w/ then "element"
   else if name.match /^\:/ then "attribute"
@@ -62,9 +68,12 @@ class Writer
           tag.attribute[short line[0]] = line[1..]
       else
         body.push line
-    @line indent, "<#{tag.name}#{attrs tag}>"
-    @renderBlock indent, body
-    @line indent, "</#{tag.name}>"
+    if tag.name in single_tags
+      @line indent, "<#{tag.name}#{attrs tag} />"
+    else
+      @line indent, "<#{tag.name}#{attrs tag}>"
+      @renderBlock indent, body
+      @line indent, "</#{tag.name}>"
 
   renderBlock: (indent, exps) ->
     exps.map (line) =>
