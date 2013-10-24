@@ -148,9 +148,9 @@
     };
 
     Writer.prototype.renderInverted = function(indent, section) {
-      var head;
+      var head, name;
       head = section[0];
-      head = (short(head)).match(/^[\w\d-\?]+/)[0];
+      name = (short(head)).match(/^[\w\d-\?]+/)[0];
       this.line(indent, "{{^" + (short(head)) + "}}");
       this.renderBlock(indent, section.slice(1));
       return this.line(indent, "{{/" + name + "}}");
