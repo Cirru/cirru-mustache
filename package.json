@@ -1,6 +1,6 @@
 {
   "name": "cirru-to-mustache",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "convert Cirru to Mustache and HTML",
   "main": "src/main.js",
   "scripts": {

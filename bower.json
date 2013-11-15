@@ -1,6 +1,6 @@
 {
   "name": "cirru-to-mustache",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "authors": [
     "jiyinyiyong <jiyinyiyong@gmail.com>"
   ],
@@ -18,7 +18,8 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "seajs": "*"
   }
 }
