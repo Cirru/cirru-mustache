@@ -80,23 +80,27 @@ mustache = render tree
 In Node:
 
 ```
-npm install --save cirru-to-mustache
+npm install --save cirru-mustache
 ```
 
 ```coffee
 tree = cirru.parse code
-html = require("cirru-to-mustache").render tree
+html = require("cirru-mustache").render tree
 ```
 
 In browser:
 
+CDN http://exportsjs.u.qiniudn.com/cirru-mustache.js
+
+or
+
 ```
-bower install --save cirru-to-mustache
+bower install --save cirru-mustache
 ```
 
 ```coffee
 define (require, exports) ->
-  html = require("cirru-to-mustache").render tree
+  html = require("cirru-mustache").render tree
 ```
 
 With RequireJS or SeaJS, you may only link to my code on Github.
@@ -107,12 +111,12 @@ seajs.config
     ["http://jiyinyiyong.github.io/", "jiyinyiyong"]
   ]
   alias:
-    cirru2html: "jiyinyiyong/cirru-to-mustache/src/mustache"
+    cirru2html: "jiyinyiyong/cirru-mustache/src/mustache"
 ```
 
 ### Live demo
 
-Link http://jiyinyiyong.github.io/cirru-to-mustache/
+Link http://jiyinyiyong.github.io/cirru-mustache/
 
 ### License
 

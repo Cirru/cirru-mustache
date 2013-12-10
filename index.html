@@ -4,21 +4,13 @@
 <head>
   <title>-> Mustache</title>
 </head>
-  <!-- <script type="text/javascript" src="./bower_components/seajs/sea-debug.js"> -->
-  <script type="text/javascript" src="http://seajs.org/dist/sea-debug.js">
+  <script type="text/javascript" src="http://exportsjs.u.qiniudn.com/sea.js">
   </script>
   <script type="text/javascript">
     seajs.config({
-      map: [
-        // ["jiyinyiyong.github.io", "code"]
-      ],
-      paths: {
-        cirru: "http://jiyinyiyong.github.io/cirru-parser",
-        compact: "http://jiyinyiyong.github.io/compact-json"
-      },
       alias: {
-        cirru: "cirru/src/parser",
-        compact: "compact/compact"
+        cirru: "http://exportsjs.u.qiniudn.com/cirru-parser",
+        compact: "http://exportsjs.u.qiniudn.com/compact-json"
       }
     })
     seajs.use("./src/test.js")
