@@ -68,55 +68,24 @@ to Mustache:
 </html>
 ```
 
-### API
+### Usage
 
-* render:
-
-```
-render :: Tree -> String
-mustache = render tree
-```
-
-In Node:
+In CommonJS
 
 ```
 npm install --save cirru-mustache
 ```
+
+* render:
 
 ```coffee
 tree = cirru.parse code
 html = require("cirru-mustache").render tree
 ```
 
-In browser:
-
-CDN http://exportsjs.u.qiniudn.com/cirru-mustache.js
-
-or
-
-```
-bower install --save cirru-mustache
-```
-
-```coffee
-define (require, exports) ->
-  html = require("cirru-mustache").render tree
-```
-
-With RequireJS or SeaJS, you may only link to my code on Github.
-
-```
-seajs.config
-  map: [
-    ["http://jiyinyiyong.github.io/", "jiyinyiyong"]
-  ]
-  alias:
-    cirru2html: "jiyinyiyong/cirru-mustache/src/mustache"
-```
-
 ### Live demo
 
-Link http://jiyinyiyong.github.io/cirru-mustache/
+Link http://repo.tiye,me/cirru-mustache/
 
 ### License
 

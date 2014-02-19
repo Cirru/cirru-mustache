@@ -1,8 +1,8 @@
 {
   "name": "cirru-mustache",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "convert Cirru to Mustache and HTML",
-  "main": "src/main.js",
+  "main": "src/mustache.js",
   "scripts": {
     "test": "node-dev calabash.coffee"
   },
@@ -19,5 +19,8 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/jiyinyiyong/cirru-mustache/issues"
+  },
+  "dependencies": {
+    "cirru-parser": "~0.7.1"
   }
 }

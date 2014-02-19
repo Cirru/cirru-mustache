@@ -114,10 +114,5 @@ class Writer
     @renderBlock -1, exps
     @buffer
 
-render = (tree) ->
+exports.render = (tree) ->
   (new Writer).render tree
-
-if define?
-  define {render}
-else if exports?
-  exports.render = render
